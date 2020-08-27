@@ -6,11 +6,20 @@
 
 * chalk
 
+  * yellow()
+
+  * green()
+
 * figlet
 
+  * textSync()
+
 * commander
+
+  * Command
 
 * clear
 
 * inquirer
 
+  * prompt()

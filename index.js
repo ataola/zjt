@@ -1,10 +1,22 @@
+#!/usr/bin/env node
+/*
+ * @Author: ataola 
+ * @Date: 2020-08-27 21:57:16 
+ * @Last Modified by: ataola
+ * @Last Modified time: 2020-08-27 22:53:03
+ */
+
+const clear = require('clear');
 const chalk = require('chalk');
 const figlet = require('figlet');
 const { Command } = require('commander');
+
 const packageJson = require('./package.json');
 
+clear();
+
 // init a logo
-console.log(chalk.yellow(figlet.textSync('zjt-cli', {
+console.log(chalk.yellow(figlet.textSync('zjt', {
   horizontalLayout: 'full'
 })));
 
@@ -17,16 +29,15 @@ program
 
 
 // optional parameters
-program.option('-c, --create', 'create a app project');
+program.option('-f, --force', 'overwrite target directory if it exists')
 
 
 // create
 program
   .command('create <app-name>')
   .description('create a new project')
-  .option('-f, --force', 'overwrite target directory if it exists')
   .action(appname => {
-    console.log(appname);
+    console.log(chalk.green('begin to create app: ', appname));
   });
 
 program.on('--help', () => {
