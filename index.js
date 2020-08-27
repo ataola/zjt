@@ -29,7 +29,7 @@ program
     console.log(appname);
   });
 
-program.on('-h, --help', () => {
+program.on('--help', () => {
   console.log();
   console.log('create by ataola, zjt-cli is a automation tool');
   console.log('about more, please visit https://zhengjiangtao.cn');
